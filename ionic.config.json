@@ -1,0 +1,7 @@
+{
+  "name": "FotosGramApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
