@@ -1,3 +1,39 @@
-<p>
-  {{ post.mensaje }}
-</p>
+
+<div class="post">
+  <ion-item line="none">
+
+    <ion-avatar>
+      <img src="../../../assets/avatars/{{ post.usuario.avatar }}" alt="Img"/>
+    </ion-avatar>
+
+    <ion-label>
+      <h3>{{ post.usuario.nombre }}</h3>
+      <h5>{{ post.usuario.email }}</h5>
+    </ion-label>
+
+  </ion-item>
+
+
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <img src="../../../assets/perro-1.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/perro-2.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/perro-3.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-item>
+    <ion-icon slot="start" name="heart-empty"></ion-icon>
+    <ion-icon slot="end" name="bookmark"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-label> {{ post.mensaje }} </ion-label>
+  </ion-item>
+
+
+</div>
