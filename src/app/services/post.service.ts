@@ -18,7 +18,12 @@ export class PostService {
   }
 
 
-  getPost(){
+  getPost(pull: boolean = false){
+
+    if( pull ){
+      this.paginasPost = 0;
+    }
+
     this.paginasPost++;
     return this.http.get<RespuestaPosts>(`${URL}/post/paginas=${this.paginasPost}`);
   }
