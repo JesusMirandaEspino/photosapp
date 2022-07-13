@@ -16,10 +16,21 @@ export class Tab1Page implements OnInit{
   }
 
   ngOnInit(){
-    this.postServices.getPost().subscribe( resp => {
-      console.log(resp);
-      this.posts.push( ...resp.posts );
-    });
+    this.siguientes();
+  }
+
+  siguientes(ev?: any){
+      this.postServices.getPost().subscribe( resp => {
+        console.log(resp);
+        this.posts.push( ...resp.posts );
+
+        if( ev ){
+          ev.target.complete();
+          if( resp.posts.length == 0 ){
+            ev.target.disable = true;
+          }
+        }
+      });
   }
 
 }
